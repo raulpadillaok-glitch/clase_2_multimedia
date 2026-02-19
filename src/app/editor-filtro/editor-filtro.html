@@ -1,0 +1,14 @@
+<p>editor-filtro works!</p>
+<div class ="card-grafica">
+    <div class="canvas-preview">
+        <img [style.filter]="filtroScss()" src="https://www.xtrafondos.com/descargar.php?id=1920&resolucion=3840x2160" alt="imagen proceso">
+        <div class="controles">
+            <label>Brillo: {{brillo()}}</label>
+            <input type="range" min="0" max="200" (input)="actualizar('brillo', $event)">
+            <label>Contraste: {{contraste()}}</label>
+            <input type="range" min="0" max="200" (input)="actualizar('contraste', $event)">
+            <label>Blur: {{blur()}}</label>
+            <input type="range" min="0" max="20"  (input)="actualizar('blur', $event)">           
+        </div>
+    </div>
+</div>
