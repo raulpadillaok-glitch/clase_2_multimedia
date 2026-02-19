@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditorFiltro } from './editor-filtro';
+import { EditorFiltroComponent } from './editor-filtro';
 
-describe('EditorFiltro', () => {
-  let component: EditorFiltro;
-  let fixture: ComponentFixture<EditorFiltro>;
+describe('EditorFiltroComponent', () => {
+  let component: EditorFiltroComponent;
+  let fixture: ComponentFixture<EditorFiltroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditorFiltro]
+      imports: [EditorFiltroComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EditorFiltro);
+    fixture = TestBed.createComponent(EditorFiltroComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

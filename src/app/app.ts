@@ -1,13 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { EditorFiltro } from './editor-filtro/editor-filtro';
+import { Component} from '@angular/core';
+import { EditorFiltroComponent } from './editor-filtro/editor-filtro';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [EditorFiltro],
+  imports: [EditorFiltroComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('clase_2_multimedia');
-}
+export class App {}
