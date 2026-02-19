@@ -10,17 +10,17 @@ export class EditorFiltroComponent {
   brillo = signal(100);
   contraste = signal(100);
   blur = signal(0);
-  
-  esBlancoYNegro = signal(false);
+  modoImagen = signal<'normal' | 'bn-artistico'>('normal');
 
- filtroScss = computed(() => {
-  const bn = this.esBlancoYNegro() ? 'grayscale(100%) contrast(110%)' : 'grayscale(0%)';
-  return `${bn} brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px)`;
-});
+  filtroScss = computed(() => {
+    if (this.modoImagen() === 'bn-artistico') {
+      return `saturate(0) contrast(150%) brightness(${this.brillo() - 10}%) blur(${this.blur()}px)`;
+    }
+     return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px)`;
+  });
 
-
-  toggleBlancoYNegro() {
-    this.esBlancoYNegro.update(v => !v);
+  toggleModo() {
+    this.modoImagen.update(actual => actual === 'normal' ? 'bn-artistico' : 'normal');
   }
 
   actualizar(prop: string, evento: Event) {

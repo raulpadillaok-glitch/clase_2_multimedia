@@ -6,14 +6,14 @@
   <div class="toolbar-inferior">
     
     <div class="control-item">
-      <button 
-        (click)="toggleBlancoYNegro()" 
-        [class.active]="esBlancoYNegro()"
-        class="btn-toggle">
-        <span class="icon">{{ esBlancoYNegro() ? '🌈' : '🌗' }}</span>
-        {{ esBlancoYNegro() ? 'Coloreado' : 'Escala de Grises' }}
-      </button>
-    </div>
+  <button 
+    (click)="toggleModo()" 
+    [class.modo-activo]="modoImagen() === 'bn-artistico'"
+    class="btn-toggle">
+    <span class="icon">{{ modoImagen() === 'bn-artistico' ? '📸' : '🖼️' }}</span>
+    {{ modoImagen() === 'bn-artistico' ? 'B&N Profesional' : 'Color Natural' }}
+  </button>
+</div>
 
     <div class="divisor-vertical"></div>
 
