@@ -10,7 +10,7 @@ export class EditorFiltroComponent {
   brillo = signal(100);
   contraste = signal(100);
   blur = signal(0);
-  // Nuevo signal para el estado Blanco y Negro
+  
   esBlancoYNegro = signal(false);
 
  filtroScss = computed(() => {
@@ -18,7 +18,7 @@ export class EditorFiltroComponent {
   return `${bn} brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px)`;
 });
 
-  // Función para alternar el filtro
+
   toggleBlancoYNegro() {
     this.esBlancoYNegro.update(v => !v);
   }
